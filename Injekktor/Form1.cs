@@ -54,11 +54,7 @@ namespace Injekktor
                 fileInfo.SetAccessControl(fileSec);
             } 
         }
-        private void applyAllDllPermissions()
-        {
-            // Apply ALL_APP_PACKAGES DLL permissions if UWP mode is enabled.
 
-        }
         private void Form1_Load(object sender, EventArgs e)
         {
             this.FormBorderStyle = FormBorderStyle.None;
@@ -73,8 +69,6 @@ namespace Injekktor
 
             button1.Text = "Inject!";
             checkBox1.Text = "UWP Mode";
-
-
         }
 
         // Custom draggable asset
@@ -115,8 +109,6 @@ namespace Injekktor
 
             try
             {
-
-
                 Process process = Process.GetProcessesByName(procName)[0];
                 IntPtr procHandle = OpenProcess(PROCESS_CREATE_THREAD | PROCESS_QUERY_INFORMATION | PROCESS_VM_OPERATION | PROCESS_VM_WRITE | PROCESS_VM_READ, false, process.Id);
 
